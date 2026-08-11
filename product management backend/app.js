@@ -8,6 +8,9 @@ const productRoutes = require("./routes/productRoutes");
 
 const app = express();
 
+// Security: Disable Express version information
+app.disable("x-powered-by");
+
 // Connect Database
 connectDB();
 
@@ -22,5 +25,5 @@ app.use("/products", productRoutes);
 const PORT = process.env.PORT || 3000;
 
 app.listen(PORT, () => {
-  console.log(`Server Running on Port ${PORT}`);
+    console.log(`Server Running on Port ${PORT}`);
 });
